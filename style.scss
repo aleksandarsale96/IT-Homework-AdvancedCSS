@@ -1,0 +1,85 @@
+// DISPLAY
+$grid: grid;
+// TOOLS
+$background-img: rgb(32, 127, 170);
+$b-radius: 10px;
+$c: center;
+$l: left;
+$m0a: 0 auto;
+$w100: 100%;
+$w90: 90%;
+$columnW: 148px;
+
+// RESPONSIVE
+$mobile: 515px;
+$tablet: 767px;
+$monitor: 1024px; 
+
+
+
+
+h5 {
+    text-align: $c;
+    margin: $m0a;
+    padding: 6px 0;
+}
+p {
+    text-align: $l;
+    font-weight: 500;
+}
+img {
+    background-color: $background-img;
+    width: $w100;
+    margin: $m0a;
+    border-top-left-radius: $b-radius;
+    border-top-right-radius: $b-radius;
+}   
+#mainHolder {
+    width: $w90;
+    max-width: 1360px;
+    display: $grid;
+    margin: $m0a;
+    grid-auto-rows: 150px;
+    grid-template-columns: repeat(5, 148px);
+    gap: 16px;
+    align-items: $c;
+    justify-content: space-between;
+}   
+.column {
+    width: $columnW;
+    text-align: $c;
+    box-sizing: border-box;
+    background-color: #f3f3f3; 
+}
+
+.mainHolder1 { 
+    width: $w90; 
+    max-width: 1360px; 
+    margin: $m0a; 
+    margin-top: 50px; 
+ 
+    & p { 
+    text-align: justify; 
+    } 
+}
+
+
+@media screen and (max-width: $monitor) {
+    #mainHolder {
+        grid-template-columns: repeat(3, $columnW);
+    }    
+    
+}
+@media screen and (max-width: $tablet) {
+    #mainHolder {
+        grid-template-columns: repeat(2, $columnW);
+        justify-content: space-evenly;
+    }    
+}
+@media screen and (max-width: $mobile) {
+    #mainHolder {
+        grid-template-columns: repeat(1, $columnW);
+        justify-content: $c;
+    }    
+    
+}
